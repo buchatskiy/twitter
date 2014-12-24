@@ -11,6 +11,7 @@ class User(models.Model):
 class Twitter(models.Model):
     text = models.CharField(max_length=50)
     name = models.ForeignKey(User)
+    date = models.DateTimeField()
     def __unicode__(self):
         return self.text
 
