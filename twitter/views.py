@@ -3,4 +3,4 @@ from twitter.models import Twitter
 from django.contrib import auth
 
 def twit(request):
-    return render_to_response('templates/twit.html',{'text':Twitter.objects.all(),'username':auth.get_user(request).username})
+    return render_to_response('twit.html',{'text':Twitter.objects.all(),'username':auth.get_user(request).username})

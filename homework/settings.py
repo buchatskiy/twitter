@@ -27,10 +27,7 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 import os.path
-TEMPLATE_DIRS = (
-    os.path.realpath(__file__).replace('\\','/'),
-)
-
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Application definition
 
