@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Вхід на сайт{% endblock %}
 
+
+{% block content %}
 <form action="" method="post">
     {% csrf_token %}
     <label for="username">Имя пользователя</label>
@@ -17,5 +14,4 @@
     {% endif %}
     <input class="button" type="submit" value="Войти">
 </form>
-</body>
-</html>
+{% endblock %}
