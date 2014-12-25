@@ -2,5 +2,20 @@
 {% block title %}Повідомлення{% endblock %}
 
 {% block content %}
-
+    {% if username %}
+        <form action="" method='get'>
+        <input name="q">
+        <input type="submit" value='Надіслати повідомлення'>
+        <h1>Усі надіслані повідомлення:</h1>
+        </form>
+    {% endif %}
+<table>
+{% for t in text %}
+   <tr>
+       <td><p> {{t.text}}</p></td>
+       <td><p> {{t.name}}</p></td>
+   </tr>
+{% endfor %}
+</table>
 {% endblock %}
+
