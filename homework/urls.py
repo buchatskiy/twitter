@@ -7,6 +7,7 @@ from loginsys.views import login, logout, register
 
 urlpatterns = patterns('',
     url(r'^$', twit),
+    url(r'^page/(\d+)/$', twit),
     url(r'^auth/login/$', login),
     url(r'^auth/logout/$', logout),
     url(r'^auth/register/$', register),

@@ -1,15 +1,18 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="ru">
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/foundation.min.css" %}"
 </head>
 <body>
+
+
+<div class="top-bar">
 {% block top %}
-<div>
-    <section>
-        <ul>
-                <li><a href="/">Головна</a></li>
+    <section class="top-bar-section">
+        <ul class="right">
             {% if username %}
                 <li><a href="/auth/logout/">Вийти ({{ username }})</a></li>
             {% else %}
@@ -17,18 +20,19 @@
             {% endif %}
         </ul>
     </section>
-</div>
 {% endblock %}
+</div>
 
 
-<h1>Мій твіттер</h1>
 
+<a href="/"><h1>Мій твіттер</h1></a>
 
+<div class="row">
 {% block content %}{% endblock %}
-
+</div>
 
 {% block footer %}
-<hr>
+    <hr>
 
 <p>Дякую, що відвідали мій сайт.</p>
 {% endblock %}

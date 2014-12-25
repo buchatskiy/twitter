@@ -2,13 +2,15 @@
 {% block title %}Повідомлення{% endblock %}
 
 {% block content %}
+
     {% if username %}
         <form action="" method='get'>
         <input name="q">
-        <input type="submit" value='Надіслати повідомлення'>
+        <input type="submit" value='Надіслати повідомлення' class="button">
         <h1>Усі надіслані повідомлення:</h1>
         </form>
     {% endif %}
+<div class="large-8 columns">
 <table>
 {% for t in text %}
    <tr>
@@ -17,6 +19,30 @@
    </tr>
 {% endfor %}
 </table>
+</div>
+     <div class="row">
+        <div class="large-3 large-offset-5 columns">
+            <ul class="pagination">
+                {% if text.has_previous %}
+                    <li class="arrow"><a href="/page/{{ text.previous_page_number }}/">&laquo;</a></li>
+                {% else %}
+                    <li class="arrow unavailable"><a href="">&laquo;</a></li>
+                {% endif %}
+                {% for page in text.paginator.page_range %}
+                    {% if page == text.number %}
+                        <li class="current"><a href="/page/{{ page }}/">{{ page }}</a></li>
+                    {% else %}
+                        <li><a href="/page/{{ page }}/">{{ page }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if text.has_next %}
+                    <li class="arrow"><a href="/page/{{ text.next_page_number }}/">&raquo;</a></li>
+                {% else %}
+                    <li class="arrow unavailable"><a href="">&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}
 
 
