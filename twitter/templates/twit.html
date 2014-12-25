@@ -13,9 +13,10 @@
 {% for t in text %}
    <tr>
        <td><p> {{t.text}}</p></td>
-       <td><p> {{t.name}}</p></td>
+       <td><p> <a href="/filter/{{t.name}}/"> {{t.name}}</a></p></td>
    </tr>
 {% endfor %}
 </table>
 {% endblock %}
+
 

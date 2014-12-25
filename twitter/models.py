@@ -14,6 +14,3 @@ class Twitter(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
         return self.text
-
-
-

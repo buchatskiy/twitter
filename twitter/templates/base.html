@@ -6,9 +6,10 @@
 </head>
 <body>
 {% block top %}
-<div class="top-bar">
-    <section class="top-bar-section">
-        <ul class="right">
+<div>
+    <section>
+        <ul>
+                <li><a href="/">Головна</a></li>
             {% if username %}
                 <li><a href="/auth/logout/">Вийти ({{ username }})</a></li>
             {% else %}
